@@ -1,0 +1,55 @@
+import React from 'react'
+
+export const SwiftGallery = () => {
+  return (
+    
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-transparent">
+    <div class="grid gap-4">
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://lastfm.freetls.fastly.net/i/u/770x0/aa5258e17685f4fbe30bc83e4ee9d651.jpg#aa5258e17685f4fbe30bc83e4ee9d651" alt=""/>
+        </div>
+      <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://lastfm.freetls.fastly.net/i/u/770x0/fb01a709286ef3445e019d072ec5d9f0.jpg#fb01a709286ef3445e019d072ec5d9f0" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://lastfm.freetls.fastly.net/i/u/770x0/279c8c2263d174a662c6c29b89e93573.jpg#279c8c2263d174a662c6c29b89e93573" alt=""/>
+        </div>
+    </div>
+    <div class="grid gap-4">
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://lastfm.freetls.fastly.net/i/u/770x0/cb434ff45430c2cf4080c1abd118adce.jpg#cb434ff45430c2cf4080c1abd118adce" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://lastfm.freetls.fastly.net/i/u/770x0/7db4715469e85294b727d9904ba4a810.jpg#7db4715469e85294b727d9904ba4a810" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://lastfm.freetls.fastly.net/i/u/770x0/48aa10ec26931086835287e62064ee00.jpg#48aa10ec26931086835287e62064ee00" alt=""/>
+        </div>
+    </div>
+    <div class="grid gap-4">
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://lastfm.freetls.fastly.net/i/u/770x0/f44952495464f0809ea015c8bd352710.jpg#f44952495464f0809ea015c8bd352710" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://lastfm.freetls.fastly.net/i/u/770x0/424c9e36ad2ef2b48b1a6f96e64acfa0.jpg#424c9e36ad2ef2b48b1a6f96e64acfa0" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://lastfm.freetls.fastly.net/i/u/770x0/dec736c267038c099baf5b80326e93f9.jpg#dec736c267038c099baf5b80326e93f9" alt=""/>
+        </div>
+    </div>
+    <div class="grid gap-4">
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://lastfm.freetls.fastly.net/i/u/770x0/480b79f5a29bd51e6a2d77af37182af7.jpg#480b79f5a29bd51e6a2d77af37182af7" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://lastfm.freetls.fastly.net/i/u/770x0/97d8e36473d094679ad8bca19fad2037.jpg#97d8e36473d094679ad8bca19fad2037" alt=""/>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://lastfm.freetls.fastly.net/i/u/770x0/eccfb2e92a1e8431d489ff1aeefd0707.jpg#eccfb2e92a1e8431d489ff1aeefd0707" alt=""/>
+        </div>
+    </div>
+</div>
+
+  )
+}
