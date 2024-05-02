@@ -7,10 +7,10 @@ export default function MeetTheTeam() {
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container flex flex-col justify-center gap-4">
         <div className="space-y-3 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Meet the Team</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Meet The Team</h2>
           <HorizontalSpacer small={true} />
           <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            The talented individuals behind this.
+            The talented mfs behind this.
           </p>
         </div>
         <div className="flex flex-row w-full justify-center flex-wrap gap-4">

@@ -1,8 +1,24 @@
+'use client'
 import React from 'react'
 import { HorizontalSpacer } from './Icons'
 import { Link } from 'next-view-transitions'
+import { useRouter } from 'next/navigation'
 
 export const Landing = () => {
+  const router = useRouter()
+  const [Name, setName] = React.useState('');
+  const saveName = () => {
+    if (Name.trim() !== '') {
+      if (localStorage.getItem('name')) {
+        localStorage.removeItem('name');
+      }
+  
+      localStorage.setItem('name', Name);
+    }
+    setTimeout(() => {
+      router.push('/quiz');
+    }, 300);
+  }
   return (
     <div className="w-full rounded-xl bg-transparent py-12 md:py-20">
        <svg
@@ -20,7 +36,7 @@ export const Landing = () => {
             <div className="flex justify-center">
               <img
                 alt="Taylor Swift"
-                className="rounded-full"
+                className="rounded-full border border-2"
                 height="200"
                 src="https://lastfm.freetls.fastly.net/i/u/770x0/48aa10ec26931086835287e62064ee00.jpg#48aa10ec26931086835287e62064ee00"
                 style={{
@@ -30,11 +46,17 @@ export const Landing = () => {
                 width="200"
               />
           </div>
-          <p className="text-lg text-gray-200">Real Swiftie?</p>
+          <input
+            value={Name}
+            onChange={(e)=>setName(e.target.value)}
+            className="text-lg bg-transparent border-none outline-none text-center font-semibold text-gray-100"
+          placeholder='Real Swiftie?'
+          />
+         
           
-            <Link href='/quiz' className="hover:bg-[#AD7974] transition duration-200 rounded-[2rem] bg-[#B2847A] px-2 md:px-4 py-1 text-sm md:text-base md:py-2  font-bold ">
+            <button onClick={saveName}  className="hover:bg-[#AD7974] transition duration-200 rounded-[2rem] bg-[#B2847A] px-2 md:px-4 py-1 text-sm md:text-base md:py-2  font-bold ">
               Start Quiz
-          </Link>
+          </button>
           
           <HorizontalSpacer small={true}/>
           </div>
