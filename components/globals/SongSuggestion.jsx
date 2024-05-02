@@ -20,7 +20,7 @@ export const SongSuggestion = () => {
   const randomTrackId = getRandomTrackId();
   return (
     <div className="fixed bottom-0 left-0 w-full h-56 z-10 p-2 justify-center flex bg-gradient-to-t from-black to-transparent">
-      <div className="md:w-1/2  flex flex-col justify-end">
+      <div className="md:w-1/2 w-full flex flex-col justify-end">
         <iframe
           className="rounded-xl backdrop-blur-md bg-white/30"
           src={`https://open.spotify.com/embed/track/${randomTrackId}?utm_source=generator&theme=0`}
