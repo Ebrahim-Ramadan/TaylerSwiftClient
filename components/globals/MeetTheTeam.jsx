@@ -23,7 +23,7 @@ export default function MeetTheTeam() {
               height='80'
               alt="mohameddtv" src={mohamedtv} />
             </div>
-            <div className="text-sm font-medium">Mohamedtv Ali</div>
+            <div className="text-sm font-medium">Mohamedtv Mostafa</div>
           </a>
           <a href="https://github.com/Ebrahim-Ramadan" className="flex flex-col items-center gap-2">
             <div className="h-20 w-20">
