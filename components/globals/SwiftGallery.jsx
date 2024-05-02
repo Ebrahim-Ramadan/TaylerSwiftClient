@@ -4,7 +4,7 @@ export const SwiftGallery = () => {
   return (
     
 
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-transparent">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-transparent py-16">
     <div class="grid gap-4">
         <div>
             <img class="h-auto max-w-full rounded-xl" src="https://lastfm.freetls.fastly.net/i/u/770x0/aa5258e17685f4fbe30bc83e4ee9d651.jpg#aa5258e17685f4fbe30bc83e4ee9d651" alt=""/>

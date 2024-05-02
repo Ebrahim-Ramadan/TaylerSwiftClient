@@ -20,7 +20,7 @@ export const Landing = () => {
     }, 300);
   }
   return (
-    <div className="w-full rounded-xl bg-transparent py-12 md:py-20">
+    <div className="w-full rounded-xl bg-transparent">
        <svg
            className="absolute opacity-40 left-0 top-0 w-full h-full -z-10 object-cover"viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="b" cx="50%" cy="50%" r="50%" fx="20%" fy="36%"><stop offset="0%" stopColor="#DEA78C" /><stop offset="100%" stopColor="rgba(194,68,247,0.2)" /></radialGradient><filter id="a" x="-500" y="-500" width="2000" height="2000" filterUnits="userSpaceOnUse"><feGaussianBlur in="SourceGraphic" stdDeviation="100" /></filter></defs><rect width="100%" height="100%" /><g filter="url(#a)">
 
@@ -43,7 +43,7 @@ export const Landing = () => {
                   aspectRatio: "200/200",
                   objectFit: "cover",
                 }}
-                width="200"
+                width="150"
               />
           </div>
           <input
