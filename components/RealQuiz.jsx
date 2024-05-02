@@ -71,8 +71,8 @@ export default function RealQuiz({ QuizQuestions }) {
   const ass = FormulateQuote(question);
 
   return (
-    <div className="md:py-4">
-      <div className={` ${animateScore ? 'score-animate' : ''} ${BackanimateScore&& 'back-score-animate'} border-l border-[#DEA78C] p-4 shadow-md`}>
+    <div className="py-4">
+      <div className={` ${animateScore ? 'score-animate' : ''} ${BackanimateScore&& 'back-score-animate'}  border-l border-[#DEA78C] p-4 shadow-md`}>
         <h2 className=" text-base xs:text-lg sm:text-xl lg:text-2xl font-bold " style={{ whiteSpace: 'pre-line' }}>{ass}</h2>
       </div>
       <ul className='absolute left-1/2 -translate-x-1/2 bottom-4 flex flex-col flex-wrap w-full px-4 gap-4 justify-center text-sm'>
@@ -101,7 +101,7 @@ export default function RealQuiz({ QuizQuestions }) {
         </div>
 
       </ul>
-      <h2 className={`h-14 absolute top-16 right-2 md:top-20 md:right-10 text-base xs:text-lg sm:text-xl lg:text-2xl font-bold `}>
+      <h2 className={`h-14 absolute top-16 right-2 md:top-20 md:right-10 px-2 text-base xs:text-lg sm:text-xl lg:text-2xl font-bold `}>
         <span className={`${animateScore ? 'score-animate' : ''}`}>
         {currentQuestionIndex + 1}
         </span>

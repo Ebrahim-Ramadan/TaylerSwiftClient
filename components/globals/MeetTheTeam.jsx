@@ -4,7 +4,7 @@ import mohamedtv from '@/public/muhamed.jpg'
 import { HorizontalSpacer } from "./Icons";
 export default function MeetTheTeam() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
+    <section className="w-full py-12 md:py-24 lg:py-32 mb-44">
       <div className="container flex flex-col justify-center gap-4">
         <div className="space-y-3 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Meet The Team</h2>

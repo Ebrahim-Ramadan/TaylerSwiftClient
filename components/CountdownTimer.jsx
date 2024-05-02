@@ -36,7 +36,7 @@ const CountdownTimer = ({children}) => {
     flex items-center text-white
     '>
 
-      <div className='absolute top-10 left-2 md:top-12 md:left-10'>
+      <div className='absolute top-12 left-2 md:top-14 md:left-10'>
         <div className='font-semibold' >Hello 
         <span className='text-[#DEA78C] ml-1 uppercase'>
         {Name}
