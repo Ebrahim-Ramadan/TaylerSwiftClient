@@ -1,4 +1,5 @@
 import React from 'react'
+import { HorizontalSpacer } from './Icons'
 
 export const Landing = () => {
   return (
@@ -34,9 +35,9 @@ export const Landing = () => {
               Start Quiz
           </a>
           
-          <div class="flex flex-row justify-center w-full text-center"><div class="bg-gradient-to-r from-black via-[#B7B7B7] to-transparent w-1/2 h-[2px] opacity-40"></div></div>
+          <HorizontalSpacer small={true}/>
           </div>
-        </div>
+      </div>
       </div>
   )
 }
