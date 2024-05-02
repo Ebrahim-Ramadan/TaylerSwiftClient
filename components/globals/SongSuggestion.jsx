@@ -19,10 +19,19 @@ export const SongSuggestion = () => {
 
   const randomTrackId = getRandomTrackId();
   return (
-    <div className='fixed bottom-0 left-0 w-full z-10 p-2 justify-center flex '>
-      <iframe
-     className='rounded-xl md:w-1/2 backdrop-blur-md bg-white/30'
-        src={`https://open.spotify.com/embed/track/${randomTrackId}?utm_source=generator&theme=0`} width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div className="fixed bottom-0 left-0 w-full h-56 z-10 p-2 justify-center flex bg-gradient-to-t from-black to-transparent">
+      <div className="md:w-1/2  flex flex-col justify-end">
+        <iframe
+          className="rounded-xl backdrop-blur-md bg-white/30"
+          src={`https://open.spotify.com/embed/track/${randomTrackId}?utm_source=generator&theme=0`}
+          width="100%"
+          height="152"
+          frameBorder="0"
+          allowFullScreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
     </div>
   );
 };
