@@ -15,7 +15,7 @@ export default function MeetTheTeam() {
         </div>
         <div className="flex flex-row w-full justify-center flex-wrap gap-4">
          
-          <a href="https://github.com/Mo7ammedd" className="flex flex-col items-center gap-2">
+          <a href="https://www.mohamedtv.tech" className="flex flex-col items-center gap-2">
             <div className="h-20 w-20">
               <Image 
               className="border rounded-full"
@@ -25,7 +25,7 @@ export default function MeetTheTeam() {
             </div>
             <div className="text-sm font-medium">Mohammed Mostafa</div>
           </a>
-          <a href="https://github.com/Ebrahim-Ramadan" className="flex flex-col items-center gap-2">
+          <a href="https://ebrahim-ramadan.vercel.app" className="flex flex-col items-center gap-2">
             <div className="h-20 w-20">
               <Image 
               className="border rounded-full"
