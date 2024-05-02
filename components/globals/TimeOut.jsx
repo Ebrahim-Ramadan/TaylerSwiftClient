@@ -5,7 +5,7 @@ export function TimeOutComponent() {
   return (
     <div className="flex flex-col items-center justify-center w-full mt-24 gap-6 ">
       <div className="space-y-4 text-center">
-        <h1 className="text-3xl font-bold text-[#B2847A]">Time's Up!</h1>
+        <h1 className="text-3xl font-bold text-[#B2847A]">Time&apos;s Up!</h1>
         <p className="text-[#7b7b7b] dark:text-[#a0a0a0]">
           TOO SLOW, not even close
         </p>
