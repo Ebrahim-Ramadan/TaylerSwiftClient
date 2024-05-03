@@ -22,17 +22,16 @@ export async function FetchRandomSong() {
     let currentLine = '';
     
     words.forEach(word => {
-        // If the word is capitalized, start a new line
-        if (word[0] === word[0].toUpperCase()) {
-            // Add the current line to the lines array
-            if (currentLine !== '') {
-                lines.push(currentLine.trim());
-                currentLine = '';
-            }
-        }
-        // Add the word to the current line
-        currentLine += `${word} `;
-    });
+      if (word && word.length > 0) {
+          if (word[0] === word[0].toUpperCase()) {
+              if (currentLine !== '') {
+                  lines.push(currentLine.trim());
+                  currentLine = '';
+              }
+          }
+      }
+      currentLine += `${word} `;
+  });
     
     // Add the last line to the lines array
     if (currentLine !== '') {
