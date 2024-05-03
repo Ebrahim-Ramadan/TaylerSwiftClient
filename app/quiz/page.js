@@ -1,12 +1,10 @@
 import CountdownTimer from "@/components/CountdownTimer";
 import { BigLocalLoading } from "@/components/globals/Icons";
 import RealQuiz from "@/components/RealQuiz";
-import { FetchQuizQuestions } from "@/utils/services";
 import { Suspense } from "react";
 
 export default async function Page() {
   const data = await getData()
-  console.log('data', data);
   if (!data) {
       return (
           'ass'

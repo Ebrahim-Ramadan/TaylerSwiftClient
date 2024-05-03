@@ -4,6 +4,7 @@ import { HorizontalSpacer } from './Icons'
 import { Link } from 'next-view-transitions'
 import { useRouter } from 'next/navigation'
 
+
 export const Landing = () => {
   const router = useRouter()
   const [Name, setName] = React.useState('');

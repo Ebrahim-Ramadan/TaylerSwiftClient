@@ -3,6 +3,7 @@ import sharmo from '@/public/sharmo.jpg'
 import mohamedtv from '@/public/muhamed.jpg'
 import { HorizontalSpacer } from "./Icons";
 export default function MeetTheTeam() {
+  
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container flex flex-col justify-center gap-4">
