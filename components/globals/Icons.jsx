@@ -31,6 +31,24 @@ export const Next = ({ props }) => {
 
     )
 }
+export const CheckedIcon = ({ props }) => {
+    return (
+        <svg 
+        {...props}
+            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-check"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><polyline points="16 11 18 13 22 9" /></svg>
+    
+
+    )
+}
+export const Twitter = ({ props }) => {
+    return (
+        <svg
+            {...props}
+            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" /></svg>
+    
+
+    )
+}
 
 export const HorizontalSpacer = ({small}) => {
     return (
@@ -38,8 +56,23 @@ export const HorizontalSpacer = ({small}) => {
     )
 }
 
-export const TinyLoading = () => {
+export const BigLocalLoading = () => {
     return (
         <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    )
+}
+export const TinyLoading = () => {
+    return (
+        <div class="lds-tinyspinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+
+
     )
 }

@@ -1,5 +1,5 @@
 import CountdownTimer from "@/components/CountdownTimer";
-import { TinyLoading } from "@/components/globals/Icons";
+import { BigLocalLoading } from "@/components/globals/Icons";
 import RealQuiz from "@/components/RealQuiz";
 import { FetchQuizQuestions } from "@/utils/services";
 import { Suspense } from "react";
@@ -14,7 +14,7 @@ export default async function Page() {
   }
   return (
     <main className="flex min-h-screen flex-col space-y-16 items-center justify-between p-4 md:p-24">
-      <Suspense fallback={<TinyLoading />}>
+      <Suspense fallback={<BigLocalLoading />}>
         <CountdownTimer>
         <RealQuiz QuizQuestions={data} />
 

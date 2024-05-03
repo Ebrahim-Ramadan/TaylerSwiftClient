@@ -170,3 +170,74 @@ body {
 }
 
 
+
+.lds-tinyspinner,
+.lds-tinyspinner div,
+.lds-tinyspinner div:after {
+  box-sizing: border-box;
+}
+
+.lds-tinyspinner {
+  color: currentColor;
+  display: inline-block;
+  position: relative;
+  width: 68px;
+  height: 80px;
+  top: -1.8rem;
+}
+
+.lds-tinyspinner div {
+  transform-origin: 40px 40px;
+  animation: lds-tinyspinner 1.2s linear infinite;
+}
+
+.lds-tinyspinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 29.2px;
+  left: 38.8px;
+  width: 2.4px;
+  height: 5.6px;
+  border-radius: 20%;
+  background: currentColor;
+}
+
+.lds-tinyspinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1s;
+}
+
+.lds-tinyspinner div:nth-child(2) {
+  transform: rotate(60deg);
+  animation-delay: -0.8s;
+}
+
+.lds-tinyspinner div:nth-child(3) {
+  transform: rotate(120deg);
+  animation-delay: -0.6s;
+}
+
+.lds-tinyspinner div:nth-child(4) {
+  transform: rotate(180deg);
+  animation-delay: -0.4s;
+}
+
+.lds-tinyspinner div:nth-child(5) {
+  transform: rotate(240deg);
+  animation-delay: -0.2s;
+}
+
+.lds-tinyspinner div:nth-child(6) {
+  transform: rotate(300deg);
+  animation-delay: 0s;
+}
+
+@keyframes lds-tinyspinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

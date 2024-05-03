@@ -3,6 +3,7 @@ import { Landing } from "@/components/globals/Landing";
 import MeetTheTeam from "@/components/globals/MeetTheTeam";
 import { SwiftGallery } from "@/components/globals/SwiftGallery";
 import { SongSuggestion } from "@/components/globals/SongSuggestion";
+import Subscribe from "@/components/globals/Subscribe";
 
 export default function Home() {
   return (
@@ -12,7 +13,9 @@ export default function Home() {
       <Landing/>
       <SwiftGallery />
       <HorizontalSpacer small={false} />
-      <MeetTheTeam/>
+      <MeetTheTeam />
+      <HorizontalSpacer small={false} />
+      <Subscribe/>
     </main>
   );
 }
