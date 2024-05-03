@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from'react';
 import { Next, Previous } from '@/components/globals/Icons';
-import CountdownTimer from './CountdownTimer';
+import gradientBG from '@/public/bg.jpeg';
 import { FormulateQuote } from '@/utils/services';
+import Image from 'next/image';
 
 export default function RealQuiz({ QuizQuestions }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -87,6 +88,25 @@ export default function RealQuiz({ QuizQuestions }) {
       <div className={` ${animateScore?'score-animate' : ''} ${BackanimateScore&& 'back-score-animate'}  border-l border-[#DEA78C] p-4 shadow-md`}>
         <h2 className=" text-base xs:text-lg sm:text-xl lg:text-2xl font-bold " style={{ whiteSpace: 'pre-line' }}>{ass}</h2>
       </div>
+      <div
+       
+        className="absolute left-1/2 -translate-x-1/2  left-0 top-0 w-full  -z-10 object-cover"
+      >
+        <Image
+          className='md:hidden opacity-15'
+          alt='gradient bg on mobile '
+          src={gradientBG}
+        width='500'
+        height='500'
+        />
+        <div
+          className='hidden md:block w-full min-h-screen opacity-50'
+          style={{
+            backgroundImage: "linear-gradient( 345deg, hsl(0deg 0% 0%) 17%, hsl(0deg 100% 5%) 61%, hsl(0deg 100% 6%) 77%, hsl(5deg 100% 6%) 86%, hsl(11deg 100% 6%) 93%, hsl(17deg 100% 6%) 97%, hsl(21deg 100% 7%) 100%, hsl(22deg 82% 8%) 101%, hsl(21deg 69% 8%) 102%, hsl(19deg 58% 9%) 100%)"
+        }}>
+          
+       </div>
+        </div>
       <ul className='absolute left-1/2 -translate-x-1/2 bottom-4 flex flex-col flex-wrap w-full px-4 gap-4 justify-center text-sm'>
        
         <div className={`flex flex-row justify-center flex-wrap w-full gap-2 ${animateScore?'score-animate' : ''} ${BackanimateScore&& 'back-score-animate'} `}>

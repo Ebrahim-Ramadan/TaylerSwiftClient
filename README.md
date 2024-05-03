@@ -1,1 +1,1 @@
-(live demo)[https://tayler-swift.vercel.app/]
+[live demo](https://tayler-swift.vercel.app/)
