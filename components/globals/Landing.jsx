@@ -40,7 +40,7 @@ export const Landing = () => {
                 className="rounded-full border border-2"
                 height="200"
               src="
-              https://lastfm.freetls.fastly.net/i/u/770x0/7db4715469e85294b727d9904ba4a810.jpg#7db4715469e85294b727d9904ba4a810"
+              https://i.pinimg.com/564x/7f/f1/47/7ff1479b6d3dc74d30224744a2a4c341.jpg"
                 style={{
                   aspectRatio: "200/200",
                   objectFit: "cover",

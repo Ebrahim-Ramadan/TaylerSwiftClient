@@ -6,7 +6,7 @@ import { ViewTransitions } from 'next-view-transitions'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "TaylerSwift",
+  title: "TaylorSwift",
   description: "tell us how swiftie you are",
 };
 
