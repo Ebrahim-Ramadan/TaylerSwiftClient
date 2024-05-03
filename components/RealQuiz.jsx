@@ -16,7 +16,7 @@ export default function RealQuiz({ QuizQuestions }) {
     if (animateScore) {
       const timeoutId = setTimeout(() => {
         setAnimateScore(false);
-      }, 500); // Duration of the animation
+      }, 500); // dlration of the animation
       return () => clearTimeout(timeoutId);
     }
   }, [animateScore]);
@@ -26,7 +26,6 @@ export default function RealQuiz({ QuizQuestions }) {
     const newSelectedAnswers = [...selectedAnswers];
     newSelectedAnswers[index] = answer;
     setSelectedAnswers(newSelectedAnswers);
-    console.log('ass');
   
     if (answer === correctAnswer) {
       setScore((prevScore) => prevScore + 1); // Use functional update form
@@ -55,8 +54,6 @@ export default function RealQuiz({ QuizQuestions }) {
     }
   };
 
-
-
   const handleNext = () => {
     setAnimateScore(true);
 
@@ -68,6 +65,7 @@ export default function RealQuiz({ QuizQuestions }) {
   };
 
   const { question, answers } = QuizQuestions[currentQuestionIndex];
+  const shuffledAnswers = useShuffle(answers);
   const ass = FormulateQuote(question);
 
   return (
@@ -78,7 +76,7 @@ export default function RealQuiz({ QuizQuestions }) {
       <ul className='absolute left-1/2 -translate-x-1/2 bottom-4 flex flex-col flex-wrap w-full px-4 gap-4 justify-center text-sm'>
        
         <div className={`flex flex-row justify-center flex-wrap w-full gap-2 ${animateScore ? 'score-animate' : ''} ${BackanimateScore&& 'back-score-animate'} `}>
-          {answers.map((answer, index) => (
+          {shuffledAnswers.map((answer, index) => (
             <li key={index} className="">
               <button className={`transition duration-100 text-black font-bold py-2 px-4 rounded-[1.5rem] ${selectedAnswers[currentQuestionIndex] === answer ? 'bg-[#DEA78C]' : 'bg-[#D0D0D0] hover:bg-[#B7B7B7]'}`} onClick={() => handleAnswer(answer, answers[0], currentQuestionIndex)}>
                 {answer}
@@ -111,3 +109,29 @@ export default function RealQuiz({ QuizQuestions }) {
   );
 }
 
+function useShuffle(array) {
+  const [shuffledArray, setShuffledArray] = useState([]);
+
+  useEffect(() => {
+    // had to do this because Error: Text content does not match server-rendered HTML. dafuq
+    const shuffled = shuffle(array);
+    setShuffledArray(shuffled);
+  }, [array]);
+
+  return shuffledArray;
+}
+
+function shuffle(array) {
+  let currentIndex = array.length, randomIndex;
+
+  while (currentIndex != 0) {
+
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
