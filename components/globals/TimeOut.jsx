@@ -1,16 +1,29 @@
 'use client'
 import { Link } from "next-view-transitions";
 
-export function TimeOutComponent() {
+export function TimeOutComponent(
+  {Quizfinished, score, total=10}
+) {
   return (
     <div className="flex flex-col items-center justify-center w-full mt-24 gap-6 ">
-      <div className="space-y-4 text-center">
-        <h1 className="text-3xl font-bold text-[#B2847A]">Time&apos;s Up!</h1>
+      {Quizfinished ?
+        
+        <div className="space-y-4 text-center">
+        <h1 className="text-3xl font-bold text-[#B2847A]">Just Finished, Congrats!</h1>
         <p className="text-[#7b7b7b] dark:text-[#a0a0a0]">
-          TOO SLOW, not even close
+         You scored {score} / {total}
         </p>
       </div>
-      <div className="flex gap-4 items-center">
+      :
+      <div className="space-y-4 text-center">
+      <h1 className="text-3xl font-bold text-[#B2847A]">Time&apos;s Up!</h1>
+      <p className="text-[#7b7b7b] dark:text-[#a0a0a0]">
+        TOO SLOW, not even close
+      </p>
+    </div>
+      }
+      
+      <div className="flex gap-2 md:gap-4 items-center">
         <Link
           className="hover:bg-[#AD7974] bg-[#B2847A] transition duration-200 rounded-[2rem]  px-2 md:px-4 py-1 text-sm md:text-base md:py-2  font-bold items-center"
           href="/"

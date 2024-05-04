@@ -9,6 +9,7 @@ import { useSearchParams } from 'next/navigation';
 import { socket } from "@/utils/socket";
 import ProgressBar from './globals/ProgressCircle';
 import { FloatingCircles } from './globals/FloatingUsers';
+import { TimeOutComponent } from './globals/TimeOut';
 
 export default function RealQuiz({ QuizQuestions }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -16,6 +17,7 @@ export default function RealQuiz({ QuizQuestions }) {
   const [selectedAnswers, setSelectedAnswers] = useState(Array(QuizQuestions.length).fill(null));
 
   const [animateScore, setAnimateScore] = useState(false);
+  const [QuizFinished, setQuizFinished] = useState(false);
   const [BackanimateScore, setBackAnimateScore] = useState(false);
   const [CurrentUsers, setCurrentUsers] = useState([]);
 
@@ -45,9 +47,8 @@ export default function RealQuiz({ QuizQuestions }) {
       }, 300);
 
     } else {
-      setTimeout(() => {
-        alert(`Quiz finished! Your score is ${score + (answer === correctAnswer? 1 : 0)} out of ${QuizQuestions.length}`);
-      }, 300);
+      setQuizFinished(true)
+     
     }
   };
 
@@ -112,68 +113,77 @@ export default function RealQuiz({ QuizQuestions }) {
 
 
   return (
-    <div className="py-4">
+    <>
+     {QuizFinished ?
+      <TimeOutComponent Quizfinished={true} score={score} />
+      :
+      <div className="py-4">
       {CurrentUsers.length>0 &&
       <FloatingCircles names={CurrentUsers}/>
       }
+     
+        <div
+       className="absolute left-1/2 -translate-x-1/2  left-0 top-0 w-full  -z-10 object-cover"
+     >
+       <Image
+         className='md:hidden opacity-15'
+         alt='gradient bg on mobile '
+         src={gradientBG}
+       width='500'
+       height='500'
+       />
+       <div
+         className='hidden md:block w-full min-h-screen opacity-50'
+         style={{
+           backgroundImage: "linear-gradient( 345deg, hsl(0deg 0% 0%) 17%, hsl(0deg 100% 5%) 61%, hsl(0deg 100% 6%) 77%, hsl(5deg 100% 6%) 86%, hsl(11deg 100% 6%) 93%, hsl(17deg 100% 6%) 97%, hsl(21deg 100% 7%) 100%, hsl(22deg 82% 8%) 101%, hsl(21deg 69% 8%) 102%, hsl(19deg 58% 9%) 100%)"
+       }}>
+         
+      </div>
+       </div>
+     <ul className='absolute left-1/2 -translate-x-1/2 bottom-4 flex flex-col flex-wrap w-full px-4 gap-4 justify-center text-sm'>
+      
+       <div className={`flex flex-row justify-center flex-wrap w-full gap-2 ${animateScore?'score-animate' : ''} ${BackanimateScore&& 'back-score-animate'} `}>
+         {shuffledAnswers.map((answer, index) => (
+           <li key={index} className="">
+             <button className={`transition duration-100 text-black font-bold py-2 px-4 rounded-[1.5rem] ${selectedAnswers[currentQuestionIndex] === answer? 'bg-[#DEA78C]' : 'bg-[#D0D0D0] hover:bg-[#B7B7B7]'}`} onClick={() => handleAnswer(answer, currentQuestionIndex)}>
+               {answer}
+             </button>
+           </li>
+         ))}
+       </div>
+
+       <div className="flex justify-center gap-4 items-center text-center w-full mt-4 space-x-2">
+         <div className='flex flex-row gap-2'>
+         <button className={`transition duration-100 text-white font-bold p-2 rounded-full ${currentQuestionIndex === 0? 'bg-transparent' : 'bg-gray-900 hover:bg-gray-800'}`} onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
+           <Previous />
+         </button>
+         <button className={`transition duration-100 text-white font-bold p-2 rounded-full ${currentQuestionIndex === QuizQuestions.length - 1? 'bg-transparent' : 'bg-gray-900 hover:bg-gray-800'}`} onClick={handleNext} disabled={currentQuestionIndex === QuizQuestions.length - 1}>
+           <Next />
+         </button>
+         </div>
+         <button className={` transition duration-200 rounded-[2rem]  px-2 md:px-4 py-1 text-sm md:text-base md:py-2  font-bold ${currentQuestionIndex!= QuizQuestions.length - 1? 'bg-gray-800' : 'hover:bg-[#AD7974] bg-[#B2847A]'} `}
+          disabled={currentQuestionIndex!= QuizQuestions.length - 1}>Submit</button>
+       </div>
+
+     </ul>
+     <h2 className={`h-14 absolute top-16 right-2 md:top-20 md:right-10 px-2 text-base  sm:text-lg lg:text-xl font-bold `}>
+       <div className='flex flex-row items-center gap-2'>
+       <span className={`${animateScore?'score-animate' : ''}`}>
+       {currentQuestionIndex + 1}
+       </span>
+      <span> /{QuizQuestions.length}</span>
+       <ProgressBar currentQuestionIndex1={currentQuestionIndex} totalQuestions1={QuizQuestions.length} currentScore={score} />
+      
+       </div>
+          </h2>
+       
       <div className={` ${animateScore?'score-animate' : ''} ${BackanimateScore&& 'back-score-animate'}  border-l border-[#DEA78C] p-4 shadow-md`}>
         <h2 className=" text-base xs:text-lg sm:text-xl lg:text-2xl font-bold " style={{ whiteSpace: 'pre-line' }}>{ass}</h2>
       </div>
-      <div
-       
-        className="absolute left-1/2 -translate-x-1/2  left-0 top-0 w-full  -z-10 object-cover"
-      >
-        <Image
-          className='md:hidden opacity-15'
-          alt='gradient bg on mobile '
-          src={gradientBG}
-        width='500'
-        height='500'
-        />
-        <div
-          className='hidden md:block w-full min-h-screen opacity-50'
-          style={{
-            backgroundImage: "linear-gradient( 345deg, hsl(0deg 0% 0%) 17%, hsl(0deg 100% 5%) 61%, hsl(0deg 100% 6%) 77%, hsl(5deg 100% 6%) 86%, hsl(11deg 100% 6%) 93%, hsl(17deg 100% 6%) 97%, hsl(21deg 100% 7%) 100%, hsl(22deg 82% 8%) 101%, hsl(21deg 69% 8%) 102%, hsl(19deg 58% 9%) 100%)"
-        }}>
-          
-       </div>
-        </div>
-      <ul className='absolute left-1/2 -translate-x-1/2 bottom-4 flex flex-col flex-wrap w-full px-4 gap-4 justify-center text-sm'>
-       
-        <div className={`flex flex-row justify-center flex-wrap w-full gap-2 ${animateScore?'score-animate' : ''} ${BackanimateScore&& 'back-score-animate'} `}>
-          {shuffledAnswers.map((answer, index) => (
-            <li key={index} className="">
-              <button className={`transition duration-100 text-black font-bold py-2 px-4 rounded-[1.5rem] ${selectedAnswers[currentQuestionIndex] === answer? 'bg-[#DEA78C]' : 'bg-[#D0D0D0] hover:bg-[#B7B7B7]'}`} onClick={() => handleAnswer(answer, currentQuestionIndex)}>
-                {answer}
-              </button>
-            </li>
-          ))}
-        </div>
-
-        <div className="flex justify-center gap-4 items-center text-center w-full mt-4 space-x-2">
-          <div className='flex flex-row gap-2'>
-          <button className={`transition duration-100 text-white font-bold p-2 rounded-full ${currentQuestionIndex === 0? 'bg-transparent' : 'bg-gray-900 hover:bg-gray-800'}`} onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
-            <Previous />
-          </button>
-          <button className={`transition duration-100 text-white font-bold p-2 rounded-full ${currentQuestionIndex === QuizQuestions.length - 1? 'bg-transparent' : 'bg-gray-900 hover:bg-gray-800'}`} onClick={handleNext} disabled={currentQuestionIndex === QuizQuestions.length - 1}>
-            <Next />
-          </button>
-          </div>
-          <button className={` transition duration-200 rounded-[2rem]  px-2 md:px-4 py-1 text-sm md:text-base md:py-2  font-bold ${currentQuestionIndex!= QuizQuestions.length - 1? 'bg-gray-800' : 'hover:bg-[#AD7974] bg-[#B2847A]'} `}
-           disabled={currentQuestionIndex!= QuizQuestions.length - 1}>Submit</button>
-        </div>
-
-      </ul>
-      <h2 className={`h-14 absolute top-16 right-2 md:top-20 md:right-10 px-2 text-base  sm:text-lg lg:text-xl font-bold `}>
-        <div className='flex flex-row items-center gap-2'>
-        <span className={`${animateScore?'score-animate' : ''}`}>
-        {currentQuestionIndex + 1}
-        </span>
-       <span> /{QuizQuestions.length}</span>
-        <ProgressBar currentQuestionIndex1={currentQuestionIndex} totalQuestions1={QuizQuestions.length} currentScore={score} />
-       
-        </div>
-      </h2>
+      
     </div>
+      }
+    </>
+    
   );
 }

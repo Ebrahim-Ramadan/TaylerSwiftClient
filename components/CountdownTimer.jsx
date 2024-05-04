@@ -4,7 +4,7 @@ import {TimeOutComponent} from '@/components/globals/TimeOut'
 import { useSearchParams } from 'next/navigation';
 const CountdownTimer = ({ children }) => {
   
-  const [countdown, setCountdown] = useState(10); 
+  const [countdown, setCountdown] = useState(120); 
   const [TimeOut, setTimeOut] = useState(false); 
   const searchParams = useSearchParams()
 

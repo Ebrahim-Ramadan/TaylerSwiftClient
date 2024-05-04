@@ -36,7 +36,7 @@ export const FloatingCircles = memo(({ names }) => {
   return (
     <div className='container'>
       {circles.map(circle => (
-        <div key={circle.id} className='circle' style={{ top: circle.y, left: circle.x }}>
+        <div key={circle.id} className='circle text-sm' style={{ top: circle.y, left: circle.x }}>
           {circle.name}
         </div>
       ))}
