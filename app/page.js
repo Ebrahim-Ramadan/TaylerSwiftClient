@@ -4,6 +4,7 @@ import MeetTheTeam from "@/components/globals/MeetTheTeam";
 import { SwiftGallery } from "@/components/globals/SwiftGallery";
 import { SongSuggestion } from "@/components/globals/SongSuggestion";
 import Subscribe from "@/components/globals/Subscribe";
+import { QuizSocketClient } from "@/components/QuizSocketClient";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <MeetTheTeam />
       <HorizontalSpacer small={false} />
       <Subscribe/>
+      {/* <QuizSocketClient/> */}
     </main>
   );
 }

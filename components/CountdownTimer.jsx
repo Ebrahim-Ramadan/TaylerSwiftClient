@@ -1,7 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import {TimeOutComponent} from '@/components/globals/TimeOut'
-const CountdownTimer = ({children}) => {
+const CountdownTimer = ({ children }) => {
+  
   const [countdown, setCountdown] = useState(120); 
   const [TimeOut, setTimeOut] = useState(false); 
   const [Name, setName] = useState(''); 

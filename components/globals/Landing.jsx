@@ -10,15 +10,9 @@ export const Landing = () => {
   const [Name, setName] = React.useState('');
   const saveName = () => {
     if (Name.trim() !== '') {
-      if (localStorage.getItem('name')) {
-        localStorage.removeItem('name');
-      }
-  
-      localStorage.setItem('name', Name);
+      router.push(`/quiz?name=${Name}`)
     }
-    setTimeout(() => {
-      router.push('/quiz');
-    }, 300);
+    
   }
   return (
     <div className="w-full rounded-xl bg-transparent">
