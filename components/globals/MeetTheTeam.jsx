@@ -6,7 +6,7 @@ export default function MeetTheTeam() {
   
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container flex flex-col justify-center gap-4">
+      <div className=" flex flex-col justify-center gap-4">
         <div className="space-y-3 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Meet The Team</h2>
           <HorizontalSpacer small={true} />

@@ -1,6 +1,5 @@
 import CountdownTimer from "@/components/CountdownTimer";
 import { BigLocalLoading } from "@/components/globals/Icons";
-import { QuizSocketClient } from "@/components/QuizSocketClient";
 import RealQuiz from "@/components/RealQuiz";
 import { Suspense } from "react";
 
@@ -15,10 +14,9 @@ export default async function Page() {
   return (
     <main className="flex min-h-screen flex-col space-y-16 items-center justify-between p-4 md:p-24">
       <Suspense fallback={<BigLocalLoading />}>
-        {/* <CountdownTimer> */}
-        {/* <RealQuiz QuizQuestions={data} /> */}
-<QuizSocketClient/>
-        {/* </CountdownTimer> */}
+        <CountdownTimer>
+        <RealQuiz QuizQuestions={data} />
+        </CountdownTimer>
       </Suspense>
     </main>
   );

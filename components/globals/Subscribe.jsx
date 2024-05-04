@@ -56,7 +56,7 @@ export const Subscribe = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="block w-full py-3 pl-4 pr-10 text-sm text-white font-bold placeholder-gray-400  rounded-lg appearance-none  focus:border-transparent bg-transparent border-none outline-none"
-              placeholder="Twitter username"
+              placeholder="Spotify username"
               required
             />
             <button

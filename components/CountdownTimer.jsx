@@ -1,16 +1,15 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import {TimeOutComponent} from '@/components/globals/TimeOut'
+import { useSearchParams } from 'next/navigation';
 const CountdownTimer = ({ children }) => {
   
-  const [countdown, setCountdown] = useState(120); 
+  const [countdown, setCountdown] = useState(10); 
   const [TimeOut, setTimeOut] = useState(false); 
-  const [Name, setName] = useState(''); 
+  const searchParams = useSearchParams()
 
   useEffect(() => {
-    if (localStorage.getItem('name')) {
-      setName(localStorage.getItem('name'))
-    }
+   
   
 
     const timer = setInterval(() => {
@@ -40,7 +39,7 @@ const CountdownTimer = ({ children }) => {
       <div className='absolute top-12 left-2 md:top-14 md:left-10'>
         <div className='font-semibold' >Hello 
         <span className='text-[#DEA78C] ml-1 uppercase'>
-        {Name}
+        {searchParams.get('name')}
         </span>        
         </div>
         <span className={`${TimeOut ? 'text-red-500' : ''}`}>

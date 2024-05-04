@@ -21,7 +21,7 @@ export const Landing = () => {
 
           <svg width="1000" height="1000" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" transform="translate(-217.252 25.924)"><path fill="url(#b)" d="M422 350.5q-56 100.5-174.5 105T104 355q-25-105 5.5-200t134-83.5q103.5 11.5 169 95t9.5 184Z" /></svg></g>
         </svg>
-        <div className="container mx-auto px-4 md:px-6">
+        <div className=" mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-6">
             <div className="space-y-2 text-center">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">

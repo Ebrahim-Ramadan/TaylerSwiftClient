@@ -5,6 +5,10 @@ import { Next, Previous } from '@/components/globals/Icons';
 import gradientBG from '@/public/bg.jpeg';
 import { FormulateQuote } from '@/utils/services';
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
+import { socket } from "@/utils/socket";
+import ProgressBar from './globals/ProgressCircle';
+import { FloatingCircles } from './globals/FloatingUsers';
 
 export default function RealQuiz({ QuizQuestions }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -13,6 +17,7 @@ export default function RealQuiz({ QuizQuestions }) {
 
   const [animateScore, setAnimateScore] = useState(false);
   const [BackanimateScore, setBackAnimateScore] = useState(false);
+  const [CurrentUsers, setCurrentUsers] = useState([]);
 
   useEffect(() => {
     if (animateScore) {
@@ -83,8 +88,34 @@ export default function RealQuiz({ QuizQuestions }) {
 
   const ass = FormulateQuote(QuizQuestions[currentQuestionIndex].question);
 
+
+
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    socket.emit('userData', { name: searchParams.get('name') });
+    
+    const handleUserList = (users) => {
+      setCurrentUsers(users);
+    };
+  
+    socket.on('userList', handleUserList);
+  
+  
+    return () => {
+      socket.off('userList', handleUserList);
+      socket.off('initialUserList'); // Remove the listener for initialUserList
+      socket.disconnect(); 
+    };
+  }, []);
+  
+
+
   return (
     <div className="py-4">
+      {CurrentUsers.length>0 &&
+      <FloatingCircles names={CurrentUsers}/>
+      }
       <div className={` ${animateScore?'score-animate' : ''} ${BackanimateScore&& 'back-score-animate'}  border-l border-[#DEA78C] p-4 shadow-md`}>
         <h2 className=" text-base xs:text-lg sm:text-xl lg:text-2xl font-bold " style={{ whiteSpace: 'pre-line' }}>{ass}</h2>
       </div>
@@ -133,11 +164,15 @@ export default function RealQuiz({ QuizQuestions }) {
         </div>
 
       </ul>
-      <h2 className={`h-14 absolute top-16 right-2 md:top-20 md:right-10 px-2 text-base xs:text-lg sm:text-xl lg:text-2xl font-bold `}>
+      <h2 className={`h-14 absolute top-16 right-2 md:top-20 md:right-10 px-2 text-base  sm:text-lg lg:text-xl font-bold `}>
+        <div className='flex flex-row items-center gap-2'>
         <span className={`${animateScore?'score-animate' : ''}`}>
         {currentQuestionIndex + 1}
         </span>
-        /{QuizQuestions.length}
+       <span> /{QuizQuestions.length}</span>
+        <ProgressBar currentQuestionIndex1={currentQuestionIndex} totalQuestions1={QuizQuestions.length} currentScore={score} />
+       
+        </div>
       </h2>
     </div>
   );
