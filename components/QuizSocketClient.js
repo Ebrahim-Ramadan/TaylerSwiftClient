@@ -17,7 +17,6 @@ export function QuizSocketClient() {
         socket.on('initialUserList', (users) => {
           console.log(users);
       });
-
         return () => {
             socket.disconnect(); 
         };
