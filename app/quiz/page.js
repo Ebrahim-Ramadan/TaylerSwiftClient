@@ -29,10 +29,10 @@ export default async function Page() {
 }
 
 async function getData() {
-  const response = await fetch(process.env.NEXT_PUBLIC_QUESTIONS_ENDPOINT,  { next: { revalidate: 3600 } });
+  const response = await fetch(process.env.NEXT_PUBLIC_QUESTIONS_ENDPOINT,  { next: { revalidate: 900 } });
   const data = await response.json();
 
   return data
 }
 
-export const revalidate = 3600 // revalidate at most every hour
+export const revalidate = 900 // revalidate at most every hour

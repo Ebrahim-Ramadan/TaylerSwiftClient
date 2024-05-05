@@ -13,7 +13,8 @@ export const Subscribe = () => {
       setloading(true)
     // Simulate an API call to subscribe to the newsletter
     setTimeout(() => {
-        setSubscribed(true);
+      setSubscribed(true);
+      window.location.href = 'https://open.spotify.com/playlist/1cjPVUxEXtPeKpptLS8zTN?si=5cc8493cda7648b3&pt=1ab64e6f75f1dca7740a86c5305f8b90';
     setloading(false)
         
     }, 2000);
@@ -47,29 +48,15 @@ export const Subscribe = () => {
         </motion.div>
           ) : (
                   
-        <form onSubmit={handleSubmit}>
-                      <div className="relative flex flex-grow items-center border rounded-[2rem] px-4">
-          <Twitter className="w-12 h-12 text-indigo-600 bg-transparent" />
-                          
-            <input
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="block w-full py-3 pl-4 pr-10 text-sm text-white font-bold placeholder-gray-400  rounded-lg appearance-none  focus:border-transparent bg-transparent border-none outline-none"
-              placeholder="Spotify username"
-              required
-            />
-            <button
-              type="submit"
-              className="absolute inset-y-0 right-0 px-4 py-3 text-sm font-medium text-white  rounded-[2rem] hover:bg-[#AD7974] transition duration-200 rounded-[2rem] bg-[#B2847A]"
-            >
-                              <p className={`${loading&&'hidden'}`}>Subscribe</p>
-                              {loading &&
-                              <TinyLoading/>
-                              }
-            </button>
-          </div>
-        </form>
+          <div className='flex flex-col justify-center gap-2 font-bold'>
+             <p className="mx-auto max-w-[700px] text-lg md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed">
+  Add Your <span className="bg-gradient-to-r text-transparent bg-clip-text from-[#ffe6f9] to-[#7a1662]">Taste</span>
+</p>
+
+            <a href='https://open.spotify.com/playlist/1cjPVUxEXtPeKpptLS8zTN?si=5cc8493cda7648b3&pt=1ab64e6f75f1dca7740a86c5305f8b90' className='text-center bg-[#B2847A] px-2 py-1 rounded-[2rem] hover:bg-[#AD7974] transition duration-200 '>
+              Open Spotify
+            </a>
+         </div>
       )}
     </motion.div>
   );
