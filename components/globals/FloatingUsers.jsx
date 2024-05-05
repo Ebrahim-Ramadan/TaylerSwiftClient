@@ -5,9 +5,10 @@ export const FloatingCircles = memo(({ names }) => {
   const [circles, setCircles] = useState([]);
 
   useEffect(() => {
-    const newCircles = names.map((name, index) => ({
+    const newCircles = names.map((user, index) => ({
       id: index,
-      name: name,
+      name: user.name,
+      score:user.score,
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
       speedX: (Math.random() - 0.5) * 2, // Random horizontal speed
@@ -36,7 +37,12 @@ export const FloatingCircles = memo(({ names }) => {
   return (
     <div className='container'>
       {circles.map(circle => (
-        <div key={circle.id} className='circle text-sm' style={{ top: circle.y, left: circle.x }}>
+        <div key={circle.id} className='circle text-sm'
+        style={{
+          top: circle.y,
+          left: circle.x,
+          backgroundColor: `rgba(222,167, 140, ${circle.score / 10})`, // Set color based on score
+        }}>
           {circle.name}
         </div>
       ))}

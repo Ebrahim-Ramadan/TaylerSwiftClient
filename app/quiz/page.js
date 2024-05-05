@@ -3,6 +3,12 @@ import { BigLocalLoading } from "@/components/globals/Icons";
 import RealQuiz from "@/components/RealQuiz";
 import { Suspense } from "react";
 
+
+export const metadata = {
+  title: 'Taylor Swift quiz',
+  description: 'quiz online with friends',
+}
+
 export default async function Page() {
 
   const data = await getData()

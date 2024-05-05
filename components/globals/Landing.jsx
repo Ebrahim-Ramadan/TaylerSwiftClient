@@ -11,6 +11,8 @@ export const Landing = () => {
   const saveName = () => {
     if (Name.trim() !== '') {
       router.push(`/quiz?name=${Name}`)
+    }else{
+      router.push('/quiz?name=ass')
     }
     
   }
@@ -25,7 +27,7 @@ export const Landing = () => {
           <div className="flex flex-col items-center justify-center space-y-6">
             <div className="space-y-2 text-center">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-                Taylor Swift Quiz
+                Taylor Swift
               </h1>
             </div>
             <div className="flex justify-center">

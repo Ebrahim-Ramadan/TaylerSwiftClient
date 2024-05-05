@@ -35,22 +35,25 @@ export default function RealQuiz({ QuizQuestions }) {
     const newSelectedAnswers = [...selectedAnswers];
     newSelectedAnswers[index] = answer;
     setSelectedAnswers(newSelectedAnswers);
-
+  
+    let newScore = score;
     if (answer === correctAnswer) {
-      setScore((prevScore) => prevScore + 1); 
+      newScore += 1;
+      setScore(newScore);
+      socket.emit('updateScore', { socketId: socket.id, score: newScore });
     }
-
+  
     const nextQuestionIndex = currentQuestionIndex + 1;
     if (nextQuestionIndex < QuizQuestions.length) {
       setTimeout(() => {
         setCurrentQuestionIndex(nextQuestionIndex);
       }, 300);
-
+  
     } else {
-      setQuizFinished(true)
-     
+      setQuizFinished(true);
     }
   };
+  
 
   const handlePrevious = () => {
     setBackAnimateScore(true)
@@ -97,6 +100,7 @@ export default function RealQuiz({ QuizQuestions }) {
     socket.emit('userData', { name: searchParams.get('name') });
     
     const handleUserList = (users) => {
+      console.log('users', users);
       setCurrentUsers(users);
     };
   
