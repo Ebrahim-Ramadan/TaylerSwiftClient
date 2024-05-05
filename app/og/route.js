@@ -1,8 +1,10 @@
+import Image from 'next/image';
 import { ImageResponse } from 'next/og';
 // App router includes @vercel/og.
 // No need to install it.
+
 import og from '@/public/og.jpg'
- 
+export const runtime = 'edge';
 export async function GET(request) {
    
   return new ImageResponse(
@@ -21,7 +23,7 @@ export async function GET(request) {
           alignItems: 'center',
         }}
       >
-        <img
+        <Image
           width="256"
           height="256"
           src={og}

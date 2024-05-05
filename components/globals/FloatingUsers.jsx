@@ -49,3 +49,5 @@ export const FloatingCircles = memo(({ names }) => {
     </div>
   );
 });
+
+FloatingCircles.displayName = 'FloatingCircles';
