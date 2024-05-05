@@ -48,7 +48,7 @@ export const Landing = () => {
             value={Name}
             onChange={(e)=>setName(e.target.value)}
             className="text-lg bg-transparent border-none outline-none text-center font-semibold text-gray-100"
-          placeholder='Real Swiftie?'
+          placeholder='Real Swiftie?...'
           />
          
           
