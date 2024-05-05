@@ -123,7 +123,7 @@ export default function RealQuiz({ QuizQuestions }) {
       :
       <div className="py-4">
       {CurrentUsers.length>0 &&
-      <FloatingCircles names={CurrentUsers}/>
+            <FloatingCircles names={CurrentUsers} myname={searchParams.get('name')} />
       }
      
         <div

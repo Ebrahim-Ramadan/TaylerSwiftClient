@@ -1,7 +1,7 @@
 'use client'
 import React, { memo, useEffect, useState } from 'react';
 
-export const FloatingCircles = memo(({ names }) => {
+export const FloatingCircles = memo(({ names, myname }) => {
   const [circles, setCircles] = useState([]);
 
   useEffect(() => {
@@ -37,15 +37,21 @@ export const FloatingCircles = memo(({ names }) => {
   return (
     <div className='container'>
       {circles.map(circle => (
-        <div key={circle.id} className='circle text-sm'
-        style={{
+        <div key={circle.id}
+          className={`circle ${myname === circle.name &&'border border-[#B2847A]'} backdrop-blur-md font-semibold rounded-full p-2 text-${circle.score === 0 ? 'sm' : `[${circle.score * 2}rem]`}`}
+          style={{
+          boxShadow:'0 0px 34px hsl(0deg 0% 100% / 11%)',
           top: circle.y,
-          left: circle.x,
-          backgroundColor: `rgba(222,167, 140, ${circle.score / 10})`, // Set color based on score
-        }}>
+            left: circle.x,
+          backgroundColor: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, ${circle.score / 5})`, 
+          }}
+        >
           {circle.name}
+          {myname === circle.name ? '(You)' :''}
         </div>
       ))}
     </div>
   );
 });
+
+FloatingCircles.displayName = 'FloatingCircles';

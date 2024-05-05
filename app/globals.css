@@ -256,8 +256,6 @@ body {
   
   position: absolute;
   color: white;
-  border-radius: 50%;
-  padding:  10px;
   white-space: nowrap;
   pointer-events: none;
   animation: float 1s infinite alternate;

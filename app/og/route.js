@@ -1,35 +1,32 @@
 import { ImageResponse } from 'next/og';
 // App router includes @vercel/og.
 // No need to install it.
-import { og } from '@/public/og.jpg'
  
 export async function GET(request) {
-   
+ 
+ 
   return new ImageResponse(
     (
       <div
         style={{
           display: 'flex',
           fontSize: 60,
-          color: 'black',
-          background: '#f6f6f6',
+          background: 'black',
           width: '100%',
           height: '100%',
-          paddingTop: 50,
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
+          
+          
         }}
       >
         <img
-          width="256"
-          height="256"
-          src={og}
+          width="100%"
+          height="100%"
+          src='https://news.harvard.edu/wp-content/uploads/2023/07/202307x_swift_1407_AP23198726852529.jpg'
           style={{
             borderRadius: 128,
           }}
         />
-        <p>taylorswifit</p>
+       
       </div>
     ),
     {
