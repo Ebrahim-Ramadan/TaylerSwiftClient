@@ -46,7 +46,8 @@ export const FloatingCircles = memo(({ names, myname }) => {
           backgroundColor: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, ${circle.score / 5})`, 
           }}
         >
-          {myname === circle.name?'YOU.':circle.name}
+          {circle.name}
+          {myname === circle.name ? '(You)' :''}
         </div>
       ))}
     </div>
