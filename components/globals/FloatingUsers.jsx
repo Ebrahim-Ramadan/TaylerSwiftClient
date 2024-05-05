@@ -47,7 +47,6 @@ export const FloatingCircles = memo(({ names, myname }) => {
           }}
         >
           {circle.name}
-          {myname === circle.name ? '(You)' :''}
         </div>
       ))}
     </div>
