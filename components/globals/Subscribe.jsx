@@ -31,6 +31,7 @@ export const Subscribe = () => {
       className="pb-72 relative flex flex-col items-center justify-center w-full max-w-sm  mx-auto my-16 rounded-lg shadow-lg "
     >
      
+     
       {subscribed ? (
               <motion.div className="flex flex-col items-center justify-center space-y-2"
               initial={{ opacity: 0, y: 20 }}
