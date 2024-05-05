@@ -14,6 +14,7 @@ export const Subscribe = () => {
     // Simulate an API call to subscribe to the newsletter
     setTimeout(() => {
         setSubscribed(true);
+        window.location.href = 'https://open.spotify.com/playlist/1cjPVUxEXtPeKpptLS8zTN?si=5cc8493cda7648b3&pt=1ab64e6f75f1dca7740a86c5305f8b90';
     setloading(false)
         
     }, 2000);
@@ -29,6 +30,9 @@ export const Subscribe = () => {
       transition={{ duration: 0.6, ease: 'easeInOut' }}
       className="pb-72 relative flex flex-col items-center justify-center w-full max-w-sm  mx-auto my-16 rounded-lg shadow-lg "
     >
+      <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+      collaborate with us on this playlist
+      </p>
      
       {subscribed ? (
               <motion.div className="flex flex-col items-center justify-center space-y-2"
