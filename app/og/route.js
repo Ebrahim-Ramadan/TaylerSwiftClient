@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 // App router includes @vercel/og.
 // No need to install it.
-import { og } from '@/public/og.jpg'
+import og from '@/public/og.jpg'
  
 export async function GET(request) {
    
