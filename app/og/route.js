@@ -31,7 +31,7 @@ export async function GET(request) {
             borderRadius: 128,
           }}
         />
-        <p>taylorswifit</p>
+        <p>When You Know You Know</p>
       </div>
     ),
     {
