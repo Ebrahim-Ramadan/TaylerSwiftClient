@@ -3,8 +3,8 @@ import { Landing } from "@/components/globals/Landing";
 import MeetTheTeam from "@/components/globals/MeetTheTeam";
 import { SwiftGallery } from "@/components/globals/SwiftGallery";
 import { SongSuggestion } from "@/components/globals/SongSuggestion";
-import Subscribe from "@/components/globals/Subscribe";
 import { IconsInBg } from "@/components/globals/IconsInBg";
+import { ShuffleMe } from "@/components/globals/ShuffleMe";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <HorizontalSpacer small={false} />
       <MeetTheTeam />
       <HorizontalSpacer small={false} />
-      <Subscribe/>
+      <ShuffleMe/>
       {/* <QuizSocketClient/> */}
     </main>
   );
