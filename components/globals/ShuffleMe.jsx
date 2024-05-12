@@ -5,7 +5,7 @@ import { Shuffle } from "./Icons";
 import Subscribe from "./Subscribe";
 
 
-const EMOJI_OPTIONS = ["🌈", "🌸", "🌍", "🥶", "🥵", "🦋"];
+const EMOJI_OPTIONS = ["☝🏻️", "😤", "😍", "🥶", "🥵", "🦋"];
 const MIN_DISTANCE_THRESHOLD = 40;
 
 const EmojiContainer = ({ position, onComplete, children }) => {
